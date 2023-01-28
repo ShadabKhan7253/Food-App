@@ -145,3 +145,64 @@
   filter: brightness(0);
   opacity: 50%;
 }
+
+/******************************************/
+/* HOW IT WORK SECTION */
+/******************************************/
+
+.section-how {
+  padding: 9.6rem 0;
+}
+
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.step-img-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-img-box::before,
+.step-img-box::after {
+  content: '';
+  display: block;
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+  border-radius: 50%;
+  /* transform: translate(-50%, -50%); */
+}
+
+.step-img-box::before {
+  /* to appear on page we need to give som econtent no matter what we use blank */
+
+  width: 60%;
+  /* height: 60%; */
+
+  /* 60% of the parent wdith */
+  padding-bottom: 60%;
+  background-color: #fdf2e9;
+  z-index: -2;
+}
+
+.step-img-box::after {
+  width: 50%;
+  padding-bottom: 50%;
+  background-color: #fae5d9;
+  z-index: -1;
+}
+
+.step-img {
+  width: 35%;
+}
