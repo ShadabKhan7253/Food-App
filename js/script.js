@@ -31,3 +31,29 @@ allLinks.forEach(function (link) {
     if (link.classList.contains('main-nav-link')) headerEl.classList.toggle('nav-open');
   });
 });
+
+///////////////////////////////////////////
+//           STICKY NAVIGATION
+//////////////////////////////////////////
+
+const sectionHeroEl = document.querySelector('.section-hero');
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+    if (ent.isIntersecting === false) {
+      document.body.classList.add('sticky');
+    }
+    if (ent.isIntersecting === true) {
+      document.body.classList.remove('sticky');
+    }
+  },
+  {
+    // In the viewport
+    root: null,
+    threshold: 0, // we observed as soon as hero-section move out of the viewport that why 0 if it is set to 1 then it will perform action when hero section is inside the viewport
+    rootMargin: '-80px',
+  }
+);
+obs.observe(sectionHeroEl);
